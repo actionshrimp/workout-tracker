@@ -3,12 +3,12 @@ lein: lein2
 
 install:
     - cd client
-    - npm install
-    - npm install -g grunt-cli
+    - npm install -q
+    - npm install -q -g grunt-cli
     - bundle install
     - cd ..
 
-test:
+script:
     - cd client
     - grunt test
     - cd ..
