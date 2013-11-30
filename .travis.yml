@@ -5,6 +5,7 @@ install:
     - cd client
     - npm install -q
     - npm install -q -g grunt-cli
+    - bower install
     - bundle install
     - cd ..
 
