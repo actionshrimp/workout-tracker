@@ -12,7 +12,7 @@ install:
 
 script:
     - cd client
-    - grunt test
+    - grunt
     - cd ..
     - cd server
     - lein2 test
