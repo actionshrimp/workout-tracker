@@ -22,7 +22,8 @@ module.exports = function (grunt) {
     yeoman: {
       // configurable paths
       app: require('./bower.json').appPath || 'app',
-      dist: '../server/resources/'
+      dist: 'dist',
+      server: '../server/resources'
     },
 
     // Watches files for changes and runs tasks based on the changed files
@@ -114,7 +115,6 @@ module.exports = function (grunt) {
     // Empties folders to start fresh
     clean: {
       dist: {
-        options: { force: true },
         files: [{
           dot: true,
           src: [
@@ -298,6 +298,15 @@ module.exports = function (grunt) {
         cwd: '<%= yeoman.app %>/styles',
         dest: '.tmp/styles/',
         src: '{,*/}*.css'
+      },
+      server: {
+        files: [{
+          expand:true,
+          dot: false,
+          cwd: '<%= yeoman.dist %>',
+          dest: '<%= yeoman.server %>',
+          src: '**/*'
+        }]
       }
     },
 
@@ -370,6 +379,7 @@ module.exports = function (grunt) {
   grunt.registerTask('default', [
     'newer:jshint',
     'test',
-    'build'
+    'build',
+    'copy:server'
   ]);
 };
