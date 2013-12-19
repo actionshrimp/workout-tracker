@@ -1,18 +1,18 @@
 'use strict';
 
 angular.module('clientApp', [
-  'ngCookies',
-  'ngResource',
-  'ngSanitize',
-  'ngRoute'
+    'ngCookies',
+    'ngResource',
+    'ngSanitize',
+    'ngRoute'
 ])
-  .config(function ($routeProvider) {
+.config(function ($routeProvider) {
     $routeProvider
-      .when('/', {
+    .when('/', {
         templateUrl: 'modules/home/view.html',
         controller: 'HomeCtrl'
-      })
-      .otherwise({
+    })
+    .otherwise({
         redirectTo: '/'
-      });
-  });
+    });
+});
