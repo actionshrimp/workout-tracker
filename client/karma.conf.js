@@ -17,6 +17,7 @@ module.exports = function(config) {
       'app/bower_components/angular-cookies/angular-cookies.js',
       'app/bower_components/angular-sanitize/angular-sanitize.js',
       'app/bower_components/angular-route/angular-route.js',
+      'app/bower_components/underscore/underscore.js',
       'app/app.js',
       'app/modules/**/*.js',
       'test/mock/**/*.js',

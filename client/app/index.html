@@ -15,7 +15,7 @@
         <link rel="stylesheet" href="styles/main.css">
         <!-- endbuild -->
 </head>
-  <body ng-app="clientApp">
+  <body ng-app="home">
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -24,9 +24,16 @@
       <script src="bower_components/es5-shim/es5-shim.js"></script>
       <script src="bower_components/json3/lib/json3.min.js"></script>
     <![endif]-->
-
-    <!-- Add your site or application content here -->
-    <div class="container" ng-view=""></div>
+    <div class="container">
+        <div class="header">
+            <ul class="nav nav-pills pull-right">
+                <li class="active"><a ng-href="#">Home</a></li>
+                <li><a ng-href="#/logbook">Log Book</a></li>
+            </ul>
+            <h3 class="text-muted">client</h3>
+        </div>
+        <div ng-view=""></div>
+    </div>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
      <script>
@@ -41,6 +48,7 @@
 
     <script src="bower_components/jquery/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/underscore/underscore.js"></script>
 
         <!-- build:js scripts/plugins.js -->
         <script src="bower_components/sass-bootstrap/js/affix.js"></script>
@@ -67,6 +75,7 @@
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="app.js"></script>
         <script src="modules/home/controller.js"></script>
+        <script src="modules/logbook/controller.js"></script>
         <!-- endbuild -->
 </body>
 </html>

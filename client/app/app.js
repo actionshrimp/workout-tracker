@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('clientApp', [
+angular.module('home', [
     'ngCookies',
     'ngResource',
     'ngSanitize',
@@ -11,6 +11,10 @@ angular.module('clientApp', [
     .when('/', {
         templateUrl: 'modules/home/view.html',
         controller: 'HomeCtrl'
+    })
+    .when('/logbook', {
+        templateUrl: 'modules/logbook/view.html',
+        controller: 'LogBookCtrl'
     })
     .otherwise({
         redirectTo: '/'

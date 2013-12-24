@@ -33,7 +33,7 @@ module.exports = function (grunt) {
                 tasks: ['newer:jshint:all']
             },
             jsTest: {
-                files: ['test/spec/**/*.js'],
+                files: ['test/spec/**/*-spec.js'],
                 tasks: ['newer:jshint:test', 'karma']
             },
             compass: {

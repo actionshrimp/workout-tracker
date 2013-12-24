@@ -1,0 +1,19 @@
+<h1>logbook</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Notes</th>
+            <th>Last</th>
+            <th>Current</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="exercise in exercises">
+            <td>{{ exercise.name }}</td>
+            <td>{{ exercise.notes }}</td>
+            <td>{{ exercise.last }}</td>
+            <td>{{ exercise.current }}</td>
+        </tr>
+    </tbody>
+</table>
