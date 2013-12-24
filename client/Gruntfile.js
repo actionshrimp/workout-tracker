@@ -23,7 +23,7 @@ module.exports = function (grunt) {
             // configurable paths
             app: require('./bower.json').appPath || 'app',
             dist: 'dist',
-            server: '../server/resources'
+            server: '../server/resources/public'
         },
 
         // Watches files for changes and runs tasks based on the changed files
@@ -180,8 +180,8 @@ module.exports = function (grunt) {
                 files: {
                     src: [
                         '<%= yeoman.dist %>/{app.js,modules/**/*.js}',
-                        '<%= yeoman.dist %>/styles/{,*/}*.css',
-                        '<%= yeoman.dist %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
+                        '<%= yeoman.dist %>/styles/**/*.css',
+                        '<%= yeoman.dist %>/images/**/*.{png,jpg,jpeg,gif,webp,svg}',
                         '<%= yeoman.dist %>/styles/fonts/*'
                     ]
                 }
@@ -200,8 +200,8 @@ module.exports = function (grunt) {
 
         // Performs rewrites based on rev and the useminPrepare configuration
         usemin: {
-            html: ['<%= yeoman.dist %>/{,*/}*.html'],
-            css: ['<%= yeoman.dist %>/styles/{,*/}*.css'],
+            html: ['<%= yeoman.dist %>/**/*.html'],
+            css: ['<%= yeoman.dist %>/styles/**/*.css'],
             options: {
                 assetsDirs: ['<%= yeoman.dist %>']
             }
@@ -243,7 +243,7 @@ module.exports = function (grunt) {
                 files: [{
                     expand: true,
                     cwd: '<%= yeoman.app %>',
-                    src: ['*.html', 'views/*.html'],
+                    src: ['*.html', 'modules/**/*.html'],
                     dest: '<%= yeoman.dist %>'
                 }]
             }
