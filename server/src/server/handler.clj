@@ -11,5 +11,11 @@
   (route/resources "/")
   (route/not-found "Not Found"))
 
-(def app
-  (handler/site app-routes))
+(defn wrap-dir-index [handler]
+  (fn [req]
+    (handler
+      (update-in req [:uri]
+                 #(if (= "/" %) "/index.html" %)))))
+
+(def app (-> (handler/site app-routes)
+             (wrap-dir-index)))
