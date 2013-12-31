@@ -1,13 +1,16 @@
 (ns server.handler
-  (:use compojure.core)
+  (:use compojure.core
+        ring.middleware.json)
   (:require [compojure.handler :as handler]
-            [compojure.route :as route]))
+            [compojure.route :as route]
+            [features.exercises.exercises-api]
+            ))
 
 (defroutes api-routes
-  (GET "/test" [] "hello api world!"))
+  (context "/exercises" [] features.exercises.exercises-api/exercises-routes))
 
 (defroutes app-routes
-  (context "/api" [] api-routes)
+  (context "/api" [] (wrap-json-response api-routes))
   (route/resources "/")
   (route/not-found "Not Found"))
 
