@@ -4,5 +4,6 @@
         features.exercises.exercises-entities))
 
 (defroutes exercises-routes
-  (GET "/:id" [id] 
+  (GET "/" [] (response (all)))
+  (GET "/:id" [id]
        (response (by-id id))))

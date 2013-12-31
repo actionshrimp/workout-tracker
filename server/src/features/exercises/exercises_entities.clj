@@ -4,6 +4,8 @@
 
 (defentity exercises (pk :id))
 
+(defn all [] (select exercises))
+
 (defn by-id [id-str]
   (let [id (Integer/parseInt id-str)]
   (first (select exercises (where {:id id})))))

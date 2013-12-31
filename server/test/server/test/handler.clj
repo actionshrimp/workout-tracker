@@ -9,7 +9,7 @@
       (is (= (:status response) 200))))
   
   (testing "api route"
-    (let [response (app (request :get "/api/test"))]
+    (let [response (app (request :get "/api/exercises"))]
       (is (= (:status response) 200)))) 
   
   (testing "not-found route"
