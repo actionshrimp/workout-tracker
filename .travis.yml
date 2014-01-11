@@ -1,6 +1,15 @@
 language: clojure
 lein: lein2
 
+env: >
+    WORKOUT_TRACKER_DB_APP_USER=postgres
+    WORKOUT_TRACKER_DB_MIG_USER=postgres
+    WORKOUT_TRACKER_DB_HOST=localhost
+    WORKOUT_TRACKER_DB_PORT=5432
+
+before_script:
+    - psql -c 'create database workout_tracker;' -U postgres
+
 install:
     - cd client
     - npm install -q
@@ -15,4 +24,5 @@ script:
     - grunt
     - cd ..
     - cd server
+    - lein2 migrate
     - lein2 test
