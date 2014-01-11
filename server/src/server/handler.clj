@@ -7,7 +7,7 @@
             ))
 
 (defroutes api-routes
-  (context "/exercises" [] features.exercises.exercises-api/exercises-routes))
+  (context "/exercises" [] features.exercises.exercises-api/api))
 
 (defroutes app-routes
   (context "/api" [] (wrap-json-response api-routes))

@@ -25,4 +25,4 @@ script:
     - cd ..
     - cd server
     - lein2 migrate
-    - lein2 test
+    - lein2 midje

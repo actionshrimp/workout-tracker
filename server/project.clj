@@ -9,9 +9,12 @@
                  [ring/ring-json "0.2.0"]]
   :plugins [[lein-environ "0.4.0"]
             [lein-ring "0.8.8"]
-            [drift "1.5.2"]]
+            [drift "1.5.2"]
+            [lein-midje "3.0.0"]]
   :ring {:handler server.handler/app}
   :profiles
   {:dev {:dependencies [[javax.servlet/servlet-api "2.5"]
                         [ring-mock "0.1.5"]
-                        [org.drift-db/drift-db-postgresql "1.1.6"]]}})
+                        [org.drift-db/drift-db-postgresql "1.1.6"]
+                        [midje "1.6.0"]
+                        [cheshire "5.3.1"]]}})
