@@ -11,6 +11,7 @@
                                (json/parse-string true)
                                (add-exercise)
                                (response)))
+
   (GET "/:id" [id]
        (response (exercise-by-id id)))
 

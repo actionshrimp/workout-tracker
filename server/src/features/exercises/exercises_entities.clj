@@ -20,9 +20,8 @@
 (defn update-exercise [exercise id-str]
   (let [id (parseId id-str)
         exercise-filtered (select-keys exercise [:name :description :image])]
-    (do
-      (update exercises (set-fields exercise-filtered) (where {:id id}))
-      (exercise-by-id id-str))))
+    (update exercises (set-fields exercise-filtered) (where {:id id}))
+    (exercise-by-id id-str)))
 
 (defn delete-exercise [id-str]
   (let [id (parseId id-str)]
