@@ -14,6 +14,10 @@ To start a web server for the application, run:
 
     lein ring server
 
+To run the tests:
+
+    lien midje
+
 ## License
 
 Copyright © 2013 FIXME
