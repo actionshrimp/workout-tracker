@@ -7,7 +7,7 @@
 (def flavor (postgresql-flavor/postgresql-flavor
               (env :workout-tracker-db-mig-user)
               (env :workout-tracker-db-mig-password)
-              "workout_tracker"
+              (env :workout-tracker-db-name)
               (format "%s:%s"
                       (env :workout-tracker-db-host)
                       (env :workout-tracker-db-port))))

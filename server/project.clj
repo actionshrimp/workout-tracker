@@ -17,4 +17,10 @@
                         [ring-mock "0.1.5"]
                         [org.drift-db/drift-db-postgresql "1.1.6"]
                         [midje "1.6.0"]
-                        [cheshire "5.3.1"]]}})
+                        [cheshire "5.3.1"]]}
+   :test [:base :user :dev {:env {:workout-tracker-db-name "workout_tracker_test"}}]
+   }
+  :aliases {"test"
+            ["do"
+             ["with-profile" "test" "migrate" ]
+             ["with-profile" "test" "midje" ]]})

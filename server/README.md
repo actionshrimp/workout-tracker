@@ -14,9 +14,9 @@ To start a web server for the application, run:
 
     lein ring server
 
-To run the tests:
+To run the tests (using midje):
 
-    lien midje
+    lien test
 
 ## License
 
